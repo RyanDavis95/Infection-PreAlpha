@@ -33,11 +33,11 @@ class INF_Settings {
     Zombie_AttackDamage = .5;
     
     playerStats[] = {
-        "INF_Stats_Kills",
-        "INF_Stats_Assists",
-        "INF_Stats_Headshots",
-        "INF_Stats_XP",
-        "INF_Stats_Deaths"
+        "INFS_Stats_Kills",
+        "INFS_Stats_Assists",
+        "INFS_Stats_Headshots",
+        "INFS_Stats_XP",
+        "INFS_Stats_Deaths"
         };
     
     /* Droppable Items */

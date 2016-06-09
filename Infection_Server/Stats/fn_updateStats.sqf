@@ -6,14 +6,14 @@ private ["_time","_kills","_assists","_headshots","_totalXP","_killXP",
 _time = serverTime;
 
 /* Init Variables */
-_kills = _killer getVariable "INF_Stats_Kills";
-_assists = _killer getVariable "INF_Stats_Assists";
-_headshots = _killer getVariable "INF_Stats_Headshots";
+_kills = _killer getVariable "INFS_Stats_Kills";
+_assists = _killer getVariable "INFS_Stats_Assists";
+_headshots = _killer getVariable "INFS_Stats_Headshots";
 
 
-_killXP = _kills * INF_Stats_KillXP;
-_assistXP = _assists * INF_Stats_AssistXP;
-_headshotXP = _headshots * INF_Stats_HeadshotXP;
+_killXP = _kills * INFS_Stats_KillXP;
+_assistXP = _assists * INFS_Stats_AssistXP;
+_headshotXP = _headshots * INFS_Stats_HeadshotXP;
 
 _aTxt = "";
 _kTxt = "";
@@ -59,16 +59,27 @@ if (_totalXP > 0) then {
     ];
 };
 
-/* Suspend Last Draw */
-terminate INF_Stats_Current;
+[_killer,"INFS_Stats_XP",_totalXP] call INFS_fnc_incStat;
 
-/* Draw Stat Text to Screen */
-INF_Stats_Current = [
-        composeText [_kTxt, _hsTxt, _aTxt, _xpTxt],
-        [safeZoneX + .05,safeZoneY+safeZoneH - .2,.5,.15],
-        [10,3],5,.5,0
-    ] spawn BIS_fnc_textTiles;   
-waitUntil { scriptDone INF_Stats_Current; };
+/* Create Text to be Drawn */
+_statText = composeText [_kTxt, _hsTxt, _aTxt, _xpTxt];
 
-/* Show Stats on Client */
-_killer call INF_fnc_saveStats;
+/* Draw Stat Text on Player's Screen */
+[[_killer,_statText],{
+    params ["_killer","_statText"];
+
+    /* Suspend Last Draw */
+    terminate INF_Stats_Current;
+
+    /* Draw New Stat Text to Screen */
+    INF_Stats_Current = [
+            _statText,
+            [safeZoneX + .05,safeZoneY+safeZoneH - .2,.5,.15],
+            [10,3],5,.5,0
+        ] spawn BIS_fnc_textTiles;  
+
+    /* Report to server when Complete */ 
+    waitUntil { scriptDone INF_Stats_Current; };
+    _killer remoteExecCall ["INFS_fnc_saveStats",2,false];
+
+}] remoteExecCall ["spawn",_killer,false];

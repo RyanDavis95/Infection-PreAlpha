@@ -16,6 +16,7 @@ waitUntil {INFS_Settings_ServerStarted && getClientState == "BRIEFING READ"};
 /* Setup Player Backend */
 {_client setVariable [_x,0,true];} forEach INFS_Settings_ScoreVars;
 _handle = _client spawn compile preProcessFileLineNumbers "Core\init.sqf";
+
 waitUntil {scriptDone _handle && _client getVariable ["INF_Client_Ready",false]};
 
 /* Add Player to Game */

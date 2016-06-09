@@ -15,4 +15,4 @@ _client setVariable ["INF_Client_GraveSpawned",false,true];
 
 // Stats
 removeAllActions player;
-player addAction ["Show Stats", INF_fnc_showStats];
+player addAction ["Show Stats", INFS_fnc_showStats];

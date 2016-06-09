@@ -15,6 +15,7 @@ class Functions
         mode = 2;
         jip = 1;
 
+        class INFS_fnc_saveStats {allowedTargets = 0;};
         class BIS_fnc_call {allowedTargets = 0;};
         class INF_fnc_spawnPlayer {allowedTargets = 0;};
         class INF_fnc_initZombie {allowedTargets = 2;};

@@ -21,3 +21,8 @@ INFS_Settings_MinPlayers = getNumber (missionConfigFile >> "INF_Settings" >> "mi
 INFS_Settings_ItemDrops = getArray (missionConfigFile >> "INF_Settings" >> "itemDrops");
 INFS_Settings_IntermissionTime = getNumber (missionConfigFile >> "INF_Settings" >> "intermissionTime");
 INFS_Settings_TimeLimit = getNumber (missionConfigFile >> "INF_Settings" >> "MaxRoundTime");
+
+/* Stats Config */
+INFS_Stats_KillXP = getNumber (missionConfigFile >> "INF_Settings" >> "KillXP");
+INFS_Stats_AssistXP = getNumber (missionConfigFile >> "INF_Settings" >> "AssistXP");
+INFS_Stats_HeadshotXP = getNumber (missionConfigFile >> "INF_Settings" >> "HeadshotXP");

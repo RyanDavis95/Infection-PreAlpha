@@ -4,7 +4,6 @@ params ["_client"];
 INF_Settings_MissionRoot = parsingNamespace getVariable "MISSION_ROOT";
 //INF_Settings_MissionRoot = format ["mpmissions\%1.%2\", missionName, worldName];
 INF_Settings_FrameCount = 0;
-INF_Settings_ScoreVars = getArray (missionConfigFile >> "INF_Settings" >> "playerStats");
 INF_Settings_SurvivorSpeed = getNumber (missionConfigFile >> "INF_Settings" >> "Survivor_Speed");
 INF_Settings_ZombieSpeed = getNumber (missionConfigFile >> "INF_Settings" >> "Zombie_Speed");
 INF_Settings_ZombieAttackDamage = getNumber (missionConfigFile >> "INF_Settings" >> "Zombie_AttackDamage");
@@ -24,17 +23,9 @@ _client setVariable ["INF_Client_OtherDamage",0,true];
 _client setVariable ["INF_Client_GraveSpawned",false,true];
 
 /* Stats Config */
-INF_Stats_KillXP = getNumber (missionConfigFile >> "INF_Settings" >> "KillXP");
-INF_Stats_AssistXP = getNumber (missionConfigFile >> "INF_Settings" >> "AssistXP");
-INF_Stats_HeadshotXP = getNumber (missionConfigFile >> "INF_Settings" >> "HeadshotXP");
 INF_Stats_Current = [] spawn {};
 _client setVariable ["INF_Stats_ShowStats",false,true];
 _client setVariable ["INF_Stats_Attackers",[],true];
-{
-    profileNamespace setVariable [_x,nil];
-    _client setVariable [_x,0,true];
-} forEach INF_Settings_ScoreVars;
-saveProfileNamespace;
 
 // Icon Config
 INF_Icons_KilledIconColor = getArray (missionConfigFile >> "INF_Settings" >> "KilledIconColor");

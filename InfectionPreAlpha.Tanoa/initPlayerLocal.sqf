@@ -5,7 +5,16 @@ waitUntil {
     && getClientState == "BRIEFING READ"
 };
 
+/* Setup Player Backend */
 _handle = _client spawn compile preProcessFileLineNumbers "Core\init.sqf";
+
+/* Setup Player Stats */
+INFS_Settings_ScoreVars = getArray (missionConfigFile >> "INF_Settings" >> "playerStats");
+{
+    profileNamespace setVariable [_x,nil];
+    _client setVariable [_x,0,true];
+} forEach INFS_Settings_ScoreVars;
+
 waitUntil {scriptDone _handle && _client getVariable ["INF_Client_Ready",false]};
 
 _inProgress = missionNamespace getVariable ["INF_Round_InProgress",false];

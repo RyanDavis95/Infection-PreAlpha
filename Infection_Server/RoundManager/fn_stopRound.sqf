@@ -20,7 +20,6 @@ waitUntil {
     };
     
     if (count INFS_Lists_Players < INFS_Settings_MinPlayers) then {
-        hint str INFS_Lists_Players;
         _handle = [] spawn INFS_fnc_aquirePlayers;
         waitUntil { scriptDone _handle; };
     };

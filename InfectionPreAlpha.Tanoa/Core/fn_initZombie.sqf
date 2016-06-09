@@ -16,4 +16,5 @@ _client setVariable ["INF_Client_OtherDamage",0,true];
 [_client,"NORMAL"] spawn INF_fnc_modIcon;
 
 // Stats
-player addAction ["Show Stats", INF_fnc_showStats];
+removeAllActions player;
+player addAction ["Show Stats", INFS_fnc_showStats];

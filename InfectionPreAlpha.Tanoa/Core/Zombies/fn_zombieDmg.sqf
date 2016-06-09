@@ -12,7 +12,7 @@ if( _client getVariable "INF_Client_Team" !=
             _client setVariable ["INF_Client_HeadDamage",_dmg,true];  
             
             if (_dmg >= 1 && isPlayer _source) then {
-                [_source,"INF_Stats_Headshots"] call INF_fnc_incStat; 
+                [_source,"INFS_Stats_Headshots"] call INFS_fnc_incStat; 
             };
             
         };
