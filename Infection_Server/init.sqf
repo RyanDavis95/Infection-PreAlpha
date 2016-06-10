@@ -1,5 +1,5 @@
 diag_log "Infection Server - Setting up Game Vars";
-[] call compile preProcessFileLineNumbers "Server\configuration.sqf";
+[] call compile preProcessFileLineNumbers "Infection_Server\configuration.sqf";
 diag_log "Infection Server - Game Vars Initialized";
 
 diag_log "Infection Server - Setup Event Handlers";

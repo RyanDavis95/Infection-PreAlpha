@@ -3,7 +3,7 @@ if (isServer) then {
     diag_log "****************************************";
     diag_log "Infection Server - Starting Server";
     
-    [] call compile preProcessFileLineNumbers "\Server\init.sqf";
+    [] call compile preProcessFileLineNumbers "Infection_Server\init.sqf";
     
     diag_log "Infection Server - Initialization Complete";
     diag_log "****************************************";

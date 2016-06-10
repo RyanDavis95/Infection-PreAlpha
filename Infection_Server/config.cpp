@@ -1,10 +1,12 @@
 class CfgPatches {
+        
         class Infection_Server {
-                units[] = {"C_man_1"};
-                weapons[] = {};
-                requiredAddons[] = {"A3_Data_F"};
-                fileName = "Infection_Server.pbo";
+
+                projectName="Infection_Server"
                 author[] = {"DJRy"};
+                version="1.0";
+                requiredAddons[] = {};
+                units[] = {};
         };
 };
 
