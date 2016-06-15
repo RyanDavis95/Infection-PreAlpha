@@ -19,6 +19,11 @@ class Infection_Server {
                     class itemPickup {};  
             };
 
+            class LootManager {
+                    file = "Infection_Server\LootManager";
+
+                    class randomRifle {};
+            };
             class PlayerManager {
                     file = "Infection_Server\PlayerManager";
 
@@ -87,6 +92,13 @@ class Infection_Core {
             
         };
         
+        class Loadout {
+                file = "Core\Loadout";
+
+                class initLoadoutScreen {};
+                class showPrimaryWeapons {};
+        };
+
         class Survivors {
             file="Core\Survivors";
             

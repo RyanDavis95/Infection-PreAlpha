@@ -77,3 +77,18 @@ addMissionEventHandler ["EachFrame",{
         //_x call INF_fnc_drawIcon;      
     } forEach INF_Icons_DisplayList;
 }];
+
+//Loadout Screen Button Manager
+[] spawn {
+    disableSerialization;
+    while {true} do {
+      
+        waitUntil { !isNull findDisplay 49 };
+        _baseCtrl = (findDisplay 49) displayCtrl 103;
+        _baseCtrl ctrlSetText "Change Loadout";
+        _baseCtrl buttonSetAction "createDialog 'LoadoutScreen'";
+        _baseCtrl ctrlEnable true;
+        _baseCtrl ctrlCommit 0;
+        waitUntil {isNull findDisplay 49};
+    };
+};

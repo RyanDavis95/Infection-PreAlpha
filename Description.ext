@@ -19,8 +19,9 @@ class CfgRemoteExec {
     #include "Config_RemoteExec.hpp"
 };
 
-class CfgRscTitles {
+class RscTitles {
     //#include "Dialog\Config_RscTitles.hpp"     
 };
 
-//#include "Dialog\Config_MasterDialog.hpp"
+#include "Common.hpp"
+#include "Core\Loadout\LoadoutScreen.hpp"

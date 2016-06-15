@@ -13,7 +13,7 @@ removeAllAssignedItems _client;
 switch (_team) do {
         case "SURVIVOR": { 
                 switch (playerSide) do {
-                        case west: { _client adduniform "U_B_CombatUniform_mcam_tshirt";};
+                        case west: { _client adduniform "U_B_CTRG_Soldier_F";};
                         case east: { _client addUniform "U_O_CombatUniform_ocamo";};
                         case independent: { _client addUniform "U_BG_Guerilla1_1";};
                         case civilian: { };
@@ -22,7 +22,7 @@ switch (_team) do {
         };
         case "ZOMBIE": {
                 switch (playerSide) do {
-                        case west: {_client adduniform "U_B_GhillieSuit";};
+                        case west: {_client adduniform "U_B_T_FullGhillie_tna_F";};
                         case east: { _client addUniform "U_O_GhillieSuit";};
                         case independent: { _client addUniform "U_I_GhillieSuit";};
                         case civilian: { };

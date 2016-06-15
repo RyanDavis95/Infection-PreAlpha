@@ -1,0 +1,1 @@
+{lbAdd[1500,_x]} forEach ["Listbox 1","Listbox 2","Listbox 3"]; //--- listbox IDC.
