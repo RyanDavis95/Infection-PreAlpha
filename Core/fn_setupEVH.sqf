@@ -86,7 +86,7 @@ addMissionEventHandler ["EachFrame",{
         waitUntil { !isNull findDisplay 49 };
         _baseCtrl = (findDisplay 49) displayCtrl 103;
         _baseCtrl ctrlSetText "Change Loadout";
-        _baseCtrl buttonSetAction "createDialog 'LoadoutScreen'";
+        _baseCtrl buttonSetAction "call INF_fnc_initLoadoutScreen";
         _baseCtrl ctrlEnable true;
         _baseCtrl ctrlCommit 0;
         waitUntil {isNull findDisplay 49};

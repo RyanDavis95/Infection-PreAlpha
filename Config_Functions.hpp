@@ -96,7 +96,10 @@ class Infection_Core {
                 file = "Core\Loadout";
 
                 class initLoadoutScreen {};
-                class showPrimaryWeapons {};
+                class saveLoadout {};
+                class showWeapons {};
+                class giveAmmo {};
+                class updateWeapons {};
         };
 
         class Survivors {

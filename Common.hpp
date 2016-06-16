@@ -112,9 +112,9 @@ class RscText
 	};
 	colorText[] = 
 	{
-		1,
-		1,
-		1,
+		0,
+		0,
+		0,
 		1
 	};
 	text = "";
@@ -123,8 +123,8 @@ class RscText
 	y = 0;
 	h = 0.037;
 	w = 0.3;
-	style = 0;
-	shadow = 1;
+	style = 514;
+	shadow = 0;
 	colorShadow[] = 
 	{
 		0,
@@ -1022,7 +1022,7 @@ class RscFrame
 	type = 0;
 	idc = -1;
 	style = 64;
-	shadow = 2;
+	shadow = 0;
 	colorBackground[] = 
 	{
 		0,
@@ -1577,4 +1577,82 @@ class RscControlsGroup
 	h = 1;
 	shadow = 0;
 	style = 16;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class INF_RscListBox
+{
+	style = 16;
+	type = 5;
+	x = 0;
+	y = 0;
+	w = 0.12;
+	h = 0.035;
+	shadow = 0;
+	colorSelect[] = {0, 0, 0, 1};
+	soundExpand[] = {"",0.1,1};
+	colorText[] = {0.95, 0.95, 0.95, 1};
+	soundCollapse[] = {"",0.1,1};
+	maxHistoryDelay = 1;
+	colorBackground[] = {0.1,0.1,0.1,0.9};
+	colorSelectBackground[] = {1, 1, 1, 0.7};
+	colow_Rscrollbar[] = {1, 0, 0, 1};
+	soundSelect[] = {
+			"", 0.000000, 1
+	};
+	arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+	arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+	wholeHeight = 0.45;
+	rowHeight = 0;
+	color[] = {1, 1, 1, 1};
+	colorActive[] = {1, 0, 0, 1};
+	colorDisabled[] = {1, 1, 1, 0.25};
+	font = "PuristaMedium";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	class ListScrollBar
+	{
+	color[] = {.8,.8,.8,0.6};
+	colorActive[] = {1,1,1,1};
+	colorDisabled[] = {1,1,1,0.3};
+	thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+	arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+	arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+	border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+	shadow = 0;
+	scrollSpeed = 0.06;
+	width = 0;
+	height = 0;
+	autoScrollEnabled = 1;
+	autoScrollSpeed = -1;
+	autoScrollDelay = 5;
+	autoScrollRewind = 0;
+	};
+};
+
+class INF_RscBackground : RscText {
+	type = 0;
+	IDC = -1;
+	style = 512;
+	shadow = 0;
+	x = 0.0;
+	y = 0.0;
+	w = 1.0;
+	h = 1.0;
+	text = "";
+	ColorBackground[] = {0.25, 0.25, 0.25, .85};
+	ColorText[] = {0.1, 0.1, 0.1, 1};
+	font = "PuristaMedium";
+	SizeEx = 1;
 };
