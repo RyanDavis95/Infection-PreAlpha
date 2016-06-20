@@ -2,6 +2,8 @@ private ["_time"];
 
 _time = serverTime + INFS_Settings_IntermissionTime;
 
+remoteExec ["INF_fnc_Intermission",INFS_Lists_Players,false];
+
 /* Spawn Players */
 [] call INFS_fnc_updateTeams;
 {

@@ -66,7 +66,7 @@ _client addMPEventHandler["MPKilled",{
     if (_killer != _victim && _killer != objNull) then {
         [_killer,"KILL"] spawn INF_fnc_modIcon;
     };
-     
+    removeAllWeapons _victim;
 }];
 
 /* Draw Icons On Players */

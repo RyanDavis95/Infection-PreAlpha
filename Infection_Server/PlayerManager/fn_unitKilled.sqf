@@ -3,7 +3,7 @@ private ["_team"];
 
 _team = _victim getVariable "INF_Client_Team";
 
-if (_team == "SURVIVOR") then {
+if (_team == "SURVIVOR" && (missionNamespace getVariable ["INF_Round_InProgress",false])) then {
     _victim call INFS_fnc_createGrave;
 };
 

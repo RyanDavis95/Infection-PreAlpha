@@ -70,6 +70,13 @@ class Infection_Core {
             class setupEVH {};
             
         };
+
+        class Dialog {
+                file = "Core\Dialog";
+
+                class intermission {};
+
+        };
         
         class Functions {
             file="Core\Functions";
@@ -97,9 +104,10 @@ class Infection_Core {
 
                 class initLoadoutScreen {};
                 class saveLoadout {};
-                class showWeapons {};
                 class giveAmmo {};
-                class updateWeapons {};
+                class updateWeapon {};
+                class updateWeaponList {};
+                class updateVariant {};
         };
 
         class Survivors {

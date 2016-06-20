@@ -15,8 +15,8 @@ class LoadoutScreen {
             Loadout_LeftColumn_HeaderBar,
             Loadout_RightColumn_PrimaryWeaponHeader,
             Loadout_RightColumn_SecondaryWeaponHeader,
-            Loadout_RightColumn_PrimaryWeaponMagComboBox,
-            Loadout_RightColumn_SecondaryWeaponMagComboBox,
+            Loadout_RightColumn_PrimaryWeaponVariantComboBox,
+            Loadout_RightColumn_SecondaryWeaponVariantComboBox,
             Loadout_MiddleColumn_WeaponSelectionComboBox,
             Loadout_MiddleColumn_WeaponSelectionHeader,
             Loadout_MiddleColumn_AttachmentSelectionListBox,
@@ -25,12 +25,9 @@ class LoadoutScreen {
             Loadout_RightColumn_Perk1Header,
             Loadout_RightColumn_Perk2Header,
             Loadout_RightColumn_Perk3Header,
-            Loadout_RightColumn_Perk1DecreaseButton,
-            Loadout_RightColumn_Perk1IncreaseButton,
-            Loadout_RightColumn_Perk2DecreaseButton,
-            Loadout_RightColumn_Perk2IncreaseButton,
-            Loadout_RightColumn_Perk3DecreaseButton,
-            Loadout_RightColumn_Perk3IncreaseButton,
+            Loadout_RightColumn_Perk1Button,
+            Loadout_RightColumn_Perk2Button,
+            Loadout_RightColumn_Perk3Button,
             Loadout_Footer_ExitButton,
             Loadout_LeftColumn_PrimaryWeaponButton,
             Loadout_LeftColumn_SecondaryWeaponButton,
@@ -88,7 +85,6 @@ class LoadoutScreen {
             y = 0.275 * safezoneH + safezoneY;
             w = 0.13 * safezoneW;
             h = 0.2 * safezoneH;
-            onLoad = "hint 'hi'"; //_this call INF_fnc_updateWeapons
         };
         class Loadout_RightColumn_PrimaryWeaponPictureBox: RscPicture
         {
@@ -113,9 +109,9 @@ class LoadoutScreen {
             idc = 1600;
             text = "Save Loadout"; //--- ToDo: Localize;
             onButtonClick = "call INF_fnc_saveLoadout";
-            x = 0.6325 * safezoneW + safezoneX;
+            x = 0.6450 * safezoneW + safezoneX;
             y = 0.8050 * safezoneH + safezoneY;
-            w = 0.0775 * safezoneW;
+            w = 0.0800 * safezoneW;
             h = 0.0200 * safezoneH;
             ColorBackground[] = {.1,.1,.1,.9};
         };
@@ -123,25 +119,25 @@ class LoadoutScreen {
         {
             idc = 1205;
             text = "#(argb,8,8,3)color(1,1,1,1)";
-            x = 0.287521 * safezoneW + safezoneX;
-            y = 0.257767 * safezoneH + safezoneY;
+            x = 0.2800 * safezoneW + safezoneX;
+            y = 0.2500 * safezoneH + safezoneY;
             w = 0.0875 * safezoneW;
-            h = 0.02 * safezoneH;
+            h = 0.0200 * safezoneH;
         };
         class Loadout_RightColumn_PrimaryWeaponHeader: RscText
         {
             idc = 1206;
             text = "Primary Weapon";
             x = 0.5500 * safezoneW + safezoneX;
-            y = 0.25 * safezoneH + safezoneY;
-            w = 0.16 * safezoneW;
-            h = 0.02 * safezoneH;
+            y = 0.2500 * safezoneH + safezoneY;
+            w = 0.1600 * safezoneW;
+            h = 0.0200 * safezoneH;
             ColorBackground[] = {0,.8,.24,1};
         };
         class Loadout_RightColumn_SecondaryWeaponHeader: RscText
         {
             idc = 1207;
-            text = "Sidearm";
+            text = "Secondary Weapon";
             x = 0.5500 * safezoneW + safezoneX;
             y = 0.4500 * safezoneH + safezoneY;
             w = 0.1600 * safezoneW;
@@ -149,7 +145,7 @@ class LoadoutScreen {
             ColorBackground[] = {0,.8,.24,1};
         };
 
-        class Loadout_RightColumn_PrimaryWeaponMagComboBox: RscCombo
+        class Loadout_RightColumn_PrimaryWeaponVariantComboBox: RscCombo
         {
             idc = 1601;
             x = 0.55 * safezoneW + safezoneX;
@@ -157,7 +153,7 @@ class LoadoutScreen {
             w = 0.16 * safezoneW;
             h = 0.02 * safezoneH;
         };
-        class Loadout_RightColumn_SecondaryWeaponMagComboBox: RscCombo
+        class Loadout_RightColumn_SecondaryWeaponVariantComboBox: RscCombo
         {
             idc = 1209;
             x = 0.5500 * safezoneW + safezoneX;
@@ -209,95 +205,71 @@ class LoadoutScreen {
             w = 0.13 * safezoneW;
             h = 0.02 * safezoneH;
         };
-        class Loadout_RightColumn_Perk1Header: RscPicture
+        class Loadout_RightColumn_Perk1Header: RscText
         {
             idc = 1212;
-            text = "#(argb,8,8,3)color(1,1,1,1)";
-            x = 0.55 * safezoneW + safezoneX;
-            y = 0.66 * safezoneH + safezoneY;
-            w = 0.0411458 * safezoneW;
-            h = 0.020463 * safezoneH;
+            text = "Perk 1";
+            x = 0.5500 * safezoneW + safezoneX;
+            y = 0.6450 * safezoneH + safezoneY;
+            w = 0.0500 * safezoneW;
+            h = 0.0200 * safezoneH;
+            ColorBackground[] = {0,.8,.24,1};
         };
-        class Loadout_RightColumn_Perk2Header: RscPicture
+        class Loadout_RightColumn_Perk2Header: RscText
         {
             idc = 1213;
-            text = "#(argb,8,8,3)color(1,1,1,1)";
-            x = 0.605209 * safezoneW + safezoneX;
-            y = 0.66 * safezoneH + safezoneY;
-            w = 0.0411457 * safezoneW;
-            h = 0.02 * safezoneH;
+            text = "Perk 2";
+            x = 0.6050 * safezoneW + safezoneX;
+            y = 0.6450 * safezoneH + safezoneY;
+            w = 0.0500 * safezoneW;
+            h = 0.0200 * safezoneH;
+            ColorBackground[] = {0,.8,.24,1};
         };
-        class Loadout_RightColumn_Perk3Header: RscPicture
+        class Loadout_RightColumn_Perk3Header: RscText
         {
             idc = 1214;
-            text = "#(argb,8,8,3)color(1,1,1,1)";
-            x = 0.658771 * safezoneW + safezoneX;
-            y = 0.660463 * safezoneH + safezoneY;
-            w = 0.0414063 * safezoneW;
-            h = 0.020463 * safezoneH;
+            text = "Perk 3";
+            x = 0.6600 * safezoneW + safezoneX;
+            y = 0.6450 * safezoneH + safezoneY;
+            w = 0.0500 * safezoneW;
+            h = 0.0200 * safezoneH;
+            ColorBackground[] = {0,.8,.24,1};
         };
-        class Loadout_RightColumn_Perk1DecreaseButton: RscButton
+        class Loadout_RightColumn_Perk1Button: RscButton
         {
             idc = 1605;
-            text = "-"; //--- ToDo: Localize;
-            x = 0.549999 * safezoneW + safezoneX;
-            y = 0.736203 * safezoneH + safezoneY;
-            w = 0.0192709 * safezoneW;
-            h = 0.0153704 * safezoneH;
+            text = "Select"; //--- ToDo: Localize;
+            x = 0.5500 * safezoneW + safezoneX;
+            y = 0.7500 * safezoneH + safezoneY;
+            w = 0.0500 * safezoneW;
+            h = 0.0200 * safezoneH;
         };
-        class Loadout_RightColumn_Perk1IncreaseButton: RscButton
-        {
-            idc = 1606;
-            text = "+"; //--- ToDo: Localize;
-            x = 0.571615 * safezoneW + safezoneX;
-            y = 0.736297 * safezoneH + safezoneY;
-            w = 0.0192708 * safezoneW;
-            h = 0.0158333 * safezoneH;
-        };
-        class Loadout_RightColumn_Perk2DecreaseButton: RscButton
+        class Loadout_RightColumn_Perk2Button: RscButton
         {
             idc = 1607;
-            text = "-"; //--- ToDo: Localize;
-            x = 0.605552 * safezoneW + safezoneX;
-            y = 0.735741 * safezoneH + safezoneY;
-            w = 0.0195312 * safezoneW;
-            h = 0.0158333 * safezoneH;
+            text = "Select"; //--- ToDo: Localize;
+            x = 0.6050 * safezoneW + safezoneX;
+            y = 0.7500 * safezoneH + safezoneY;
+            w = 0.0500 * safezoneW;
+            h = 0.0200 * safezoneH;
         };
-        class Loadout_RightColumn_Perk2IncreaseButton: RscButton
-        {
-            idc = 1608;
-            text = "+"; //--- ToDo: Localize;
-            x = 0.626542 * safezoneW + safezoneX;
-            y = 0.735678 * safezoneH + safezoneY;
-            w = 0.0197917 * safezoneW;
-            h = 0.0158335 * safezoneH;
-        };
-        class Loadout_RightColumn_Perk3DecreaseButton: RscButton
+        class Loadout_RightColumn_Perk3Button: RscButton
         {
             idc = 1609;
-            text = "-"; //--- ToDo: Localize;
-            x = 0.65851 * safezoneW + safezoneX;
-            y = 0.735678 * safezoneH + safezoneY;
-            w = 0.0197917 * safezoneW;
-            h = 0.0158333 * safezoneH;
-        };
-        class Loadout_RightColumn_Perk3IncreaseButton: RscButton
-        {
-            idc = 1610;
-            text = "+"; //--- ToDo: Localize;
-            x = 0.680448 * safezoneW + safezoneX;
-            y = 0.735615 * safezoneH + safezoneY;
-            w = 0.0197917 * safezoneW;
-            h = 0.0162963 * safezoneH;
+            text = "Select"; //--- ToDo: Localize;
+            x = 0.6600 * safezoneW + safezoneX;
+            y = 0.7500 * safezoneH + safezoneY;
+            w = 0.0500 * safezoneW;
+            h = 0.0200 * safezoneH;
         };
         class Loadout_Footer_ExitButton: RscButton
         {
             idc = 1611;
             text = "Cancel"; //--- ToDo: Localize;
             onButtonClick = "closeDialog 1337";
-            x = 0.5500 * safezoneW + safezoneX;
+            x = 0.5800 * safezoneW + safezoneX;
             y = 0.8050 * safezoneH + safezoneY;
-            w = 0.0775 * safezoneW;
+            w = 0.0600 * safezoneW;
             h = 0.0200 * safezoneH;
             ColorBackground[] = {.1,.1,.1,.9};
         };
@@ -305,46 +277,48 @@ class LoadoutScreen {
         {
             idc = 1612;
             text = "Primary Weapon"; //--- ToDo: Localize;
-            x = 0.291407 * safezoneW + safezoneX;
-            y = 0.301945 * safezoneH + safezoneY;
-            w = 0.0802083 * safezoneW;
-            h = 0.0353703 * safezoneH;
+            x = 0.2750 * safezoneW + safezoneX;
+            y = 0.8050 * safezoneH + safezoneY;
+            w = 0.0800 * safezoneW;
+            h = 0.0200 * safezoneH;
+            ColorBackground[] = {.1,.1,.1,.9};
         };
         class Loadout_LeftColumn_SecondaryWeaponButton: RscButton
         {
             idc = 1613;
             text = "Secondary Weapon"; //--- ToDo: Localize;
-            x = 0.291406 * safezoneW + safezoneX;
-            y = 0.363333 * safezoneH + safezoneY;
-            w = 0.0802083 * safezoneW;
-            h = 0.0353703 * safezoneH;
+            x = 0.3600 * safezoneW + safezoneX;
+            y = 0.8050 * safezoneH + safezoneY;
+            w = 0.0800 * safezoneW;
+            h = 0.0200 * safezoneH;
+            ColorBackground[] = {.1,.1,.1,.9};
         };
         class Loadout_RightColumn_Perk1PictureBox: RscPicture
         {
             idc = 1215;
             text = "#(argb,8,8,3)color(1,1,1,1)";
-            x = 0.550261 * safezoneW + safezoneX;
-            y = 0.683241 * safezoneH + safezoneY;
-            w = 0.0408855 * safezoneW;
-            h = 0.0474999 * safezoneH;
+            x = 0.5500 * safezoneW + safezoneX;
+            y = 0.6700 * safezoneH + safezoneY;
+            w = 0.0500 * safezoneW;
+            h = 0.0750 * safezoneH;
         };
         class Loadout_RightColumn_Perk2PictureBox: RscPicture
         {
             idc = 1216;
             text = "#(argb,8,8,3)color(1,1,1,1)";
-            x = 0.605469 * safezoneW + safezoneX;
-            y = 0.683796 * safezoneH + safezoneY;
-            w = 0.0408854 * safezoneW;
-            h = 0.0469444 * safezoneH;
+            x = 0.6050 * safezoneW + safezoneX;
+            y = 0.6700 * safezoneH + safezoneY;
+            w = 0.0500 * safezoneW;
+            h = 0.0750 * safezoneH;
         };
         class Loadout_RightColumn_Perk3PictureBox: RscPicture
         {
             idc = 1217;
             text = "#(argb,8,8,3)color(1,1,1,1)";
-            x = 0.658855 * safezoneW + safezoneX;
-            y = 0.683334 * safezoneH + safezoneY;
-            w = 0.0414062 * safezoneW;
-            h = 0.0483333 * safezoneH;
+            x = 0.6600 * safezoneW + safezoneX;
+            y = 0.6700 * safezoneH + safezoneY;
+            w = 0.0500 * safezoneW;
+            h = 0.0750 * safezoneH;
         };
         class Loadout_MiddleColumn_WeaponSelectionFrame: RscFrame
         {
@@ -381,10 +355,10 @@ class LoadoutScreen {
         class Loadout_RightColumn_PerksFrame: RscFrame
         {
             idc = 1804;
-            x = 0.5450 * safezoneW + safezoneX;
-            y = 0.6225 * safezoneH + safezoneY;
+            x = 0.5475 * safezoneW + safezoneX;
+            y = 0.6425 * safezoneH + safezoneY;
             w = 0.1650 * safezoneW;
-            h = 0.0962037 * safezoneH;
+            h = 0.1325 * safezoneH;
         };
         class Loadout_LeftColumn_WeaponSelectFrame: RscFrame
         {
@@ -408,7 +382,7 @@ class LoadoutScreen {
             idc = 1614;
             text = "Remove"; //--- ToDo: Localize;
             x = 0.40 * safezoneW + safezoneX;
-            y = 0.7750 * safezoneH + safezoneY;
+            y = 0.7650 * safezoneH + safezoneY;
             w = 0.05 * safezoneW;
             h = 0.02 * safezoneH;
             ColorBackground[] = {.1,.1,.1,.9};
@@ -418,7 +392,7 @@ class LoadoutScreen {
             idc = 1615;
             text = "Attach"; //--- ToDo: Localize;
             x = 0.48 * safezoneW + safezoneX;
-            y = 0.7750 * safezoneH + safezoneY;
+            y = 0.7650 * safezoneH + safezoneY;
             w = 0.05 * safezoneW;
             h = 0.02 * safezoneH;
             ColorBackground[] = {.1,.1,.1,.9};

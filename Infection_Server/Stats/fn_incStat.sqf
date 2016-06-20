@@ -1,4 +1,3 @@
-hint str _this;
 params ["_client","_stat",["_amt",1]];
 
 _val = _client getVariable [_stat,0];

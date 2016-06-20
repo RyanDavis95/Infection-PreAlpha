@@ -24,4 +24,5 @@ class Functions
         class INFD_fnc_playerInfected {allowedTargets = 0;};
         class INFD_fnc_survivorsEliminated {allowedTargets = 0;};
         class INFS_fnc_updateTeams {allowedTargets = 0;};
+        class INF_fnc_intermission {allowedTargets = 0};
 };

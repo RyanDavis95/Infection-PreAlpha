@@ -37,3 +37,21 @@ INF_Icons_FadeThread = [] spawn {};
 _client setVariable ["INF_Icons_Texture","",true];
 _client setVariable ["INF_Icons_Color",[0,0,0,0],true];
 _client setVariable ["INF_Icons_Text",name _client,true];
+
+INF_Weapons_Categories = [];
+INF_Weapons_CurrentList = [];
+INF_Weapons_AssaultRifles = getArray (missionConfigFile >> "INF_Weapons" >> "Assault_Rifles" >> "Weapons");
+INF_Weapons_MachineGuns = getArray (missionConfigFile >> "INF_Weapons" >> "Machine_Guns" >> "Weapons");
+INF_Weapons_Pistols = [];
+INF_Weapons_SMGs = [];
+INF_Weapons_Snipers = [];
+INF_Weapons_Unlocked = [];
+
+_weaponConfigs = "true" configClasses (missionConfigFile >> "INF_Weapons");
+{ INF_Weapons_Categories pushBackUnique (getText (_x >> "name")) } forEach _weaponConfigs;
+
+
+/* Setup Loadout Screen Vars */
+INF_Loadout_WeaponCategory = -1;
+INF_Loadout_SelectedWeapon = -1;
+INF_Loadout_WeaponVariant = -1;
