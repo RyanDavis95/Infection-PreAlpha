@@ -1,6 +1,5 @@
 params ["_ctrl","_index"];
 _loadoutDisplay = findDisplay 1337;
-_primaryWeaponPicCtrl = _loadoutDisplay displayCtrl 1203;
 _primaryWeaponVariantCtrl = _loadoutDisplay displayCtrl 1601;
 
 _variants = [];

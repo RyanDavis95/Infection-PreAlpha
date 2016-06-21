@@ -108,6 +108,8 @@ class Infection_Core {
                 class updateWeapon {};
                 class updateWeaponList {};
                 class updateVariant {};
+                class updateAttachment {};
+                class updateAttachmentList {};
         };
 
         class Survivors {

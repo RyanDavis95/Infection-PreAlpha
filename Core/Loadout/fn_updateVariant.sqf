@@ -8,4 +8,6 @@ _weaponCfg = _ctrl lbData INF_Loadout_WeaponVariant;
 /* Show Weapon Picture */
 _weaponModel = getText (configFile >> "CfgWeapons" >> _weaponCfg >> "picture");
 _primaryWeaponModelCtrl ctrlSetText _weaponModel;
-//copyToClipBoard _weaponModel;
+
+
+_weaponCfg call INF_fnc_updateAttachmentList;
