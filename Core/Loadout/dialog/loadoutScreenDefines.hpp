@@ -1,3 +1,4 @@
+#define Loadout_Menu_DIALOG 1100
 /* Loadout Menu */
 #define Loadout_Menu_Header 1200
 #define Loadout_Menu_Background 1201

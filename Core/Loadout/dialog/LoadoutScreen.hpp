@@ -1,7 +1,7 @@
 #include "LoadoutScreenDefines.hpp"
 
 class LoadoutScreen {
-        idd = 1337;
+        idd = Loadout_Menu_DIALOG;
         movingEnable = 0;
         
         class ControlsBackground 
